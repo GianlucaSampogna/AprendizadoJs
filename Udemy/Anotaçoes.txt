@@ -1,0 +1,58 @@
+Só usar LET e CONST, nunca VAR
+
+
+Resumindo, quando usamos o = em valores primitivos ees irão ser copiados, enquanto os valores não primitivos irão ser passados por referência. Os tipos primitivos são imutáveis(não dá para transforma-los) e copiados(é criado um novo espaço na memória com o mesmo vaor), enquanto os outros(array,fucntion,object) são mutaveis e passados por referência(apontam para o mesmo espaço na memória). 
+
+
+
+ARRAY
+São declarados por []
+lista.push(variável) - o valor irá para o final da lista
+lista.unshift(variável) - o valor irá para o inicío da lista
+lista.pop() - remove o ultimo item da lista
+lista.shift() - remove o primeiro item da lista
+lista.slince(x,y) - fatia a lista na qual x e y são parametros de tamanho, inicio e fim, se usarmos os valores 0,0 serão contemplados todos os valores e se usarmos 0 e -1 não pegaremos o ultimo vaor e assim a diante com o -2, -3...
+
+let x = [...y] - para criar uma lista independente (não referenciada a outra) mas com os mesmos vaores, devemos associar com os 3 pontos antes.
+
+
+
+OBJETOS
+São declarados por {}
+
+let x = {...y} - para criar uma objeto independente (não referenciada a outra) mas com os mesmos vaores, devemos associar com os 3 pontos antes.
+
+
+for(i in lista){
+	console.log(lista[i])
+} // RETORNA O ÍNDICE
+
+for (i of lista){
+	console.log(i)
+}//RETORNA OS VALORES
+
+Continue - Pula para a proxima interação do laço
+Break - Para o laço
+
+try{} - irá o ocorrer normalmente
+catch(erro){} - irá ser executado se ocorrer algum erro dentro do try, retornando a variavel erro(podendo ser usada dentro do erro)
+throw(algumacoisa) - se isso resultar true irá parar o programa e ir pro catch
+finnaly - sempre será executado (muito utilizado para fechar arquivos ou terminar conexoes)
+
+setInterval(function, ms) - irá executar a função de determinado em determinado tempo(se apenas utilizar ela deste jeito, ela nunca irá parar)
+setTimeOut(function, ms) - só ira executar uma vez e irá parar depois do tempo informado no segundo parametro
+
+
+Rest operator (...) - dentro de uma função é utilizada como parametro por ultimo para acumular todos os argumentos em uma array ex: function conta(operador, ...numeros) ARGUMENTOS: (+, 20, 30, 40,50), ficando assim o 20, 30, 40, 50 todos no paremetro numeros e podendo fazer um for of para somar todos os numeros
+
+typof - retorna o tipo da variável
+
+
+Funções tem como retornar funções
+
+Funçoes de callback - retornam um valor quando são executadas(a partir disso outras ações são tomadas), muito importante quando as coisas tem que acontecer em sequencia
+
+IIFE - immediately invoked function express - usada para tirar o código do escopo global sintaxe: 
+(function(){
+	JOGAR O CÓDIGO AQUI
+})()
